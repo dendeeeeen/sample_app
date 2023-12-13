@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   # デフォルト => app/views/コントローラ名/アクション名.html.erb
   def help
   end
+
+  def about
+  end
 end
