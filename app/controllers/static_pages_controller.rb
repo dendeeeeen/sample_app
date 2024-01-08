@@ -1,17 +1,18 @@
 class StaticPagesController < ApplicationController
+
   def home
-    # デフォルト => app/views/static_pages/home.html.erb
+    if logged_in?
+      @micropost  = current_user.microposts.build
+      @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def help
-    # デフォルト => app/views/コントローラ名/アクション名.html.erb
   end
 
   def about
-    # デフォルト => app/views/コントローラ名/アクション名.html.erb
   end
 
   def contact
-    # デフォルト => app/views/コントローラ名/アクション名.html.erb
   end
 end
